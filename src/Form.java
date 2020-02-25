@@ -3,7 +3,7 @@ public class Form {
     private Book book;
     private Customer customer;
 
-    public Form(Book book, Customer customer, int days) {
+    public Form(Book book, Customer customer) {
         this.book = book;
         this.customer = customer;
     }

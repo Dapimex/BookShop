@@ -31,14 +31,14 @@ public class Main {
         Customer customerSubham = new Customer("Subham", "888-66-63");
         Customer customerLeonid = new Customer("Leonid", "852-96-41");
 
-        Form form = new Form(th1, customerLuiz, 7);
-        bs.bookBooks(form);     // submit form for booking to the book shop
+        Form form = new Form(th1, customerLuiz);
+        bs.buyBooks(form);     // submit form for booking to the book shop
 
-        Form form2 = new Form(ran1, customerSubham, 14);
-        bs.bookBooks(form2);
+        Form form2 = new Form(ran1, customerSubham);
+        bs.buyBooks(form2);
 
-        Form form3 = new Form(det2, customerLeonid, 2);
-        bs.bookBooks(form3);
+        Form form3 = new Form(det2, customerLeonid);
+        bs.buyBooks(form3);
 
         printFormList("CURRENT BOOKINGS IN BOOK SHOP:", bs.getForms());
 

@@ -3,13 +3,12 @@ import java.util.List;
 
 public class BookFactory {
 
-    List<Book> books = new ArrayList<>();
     protected int ranobeBookCounter;
     protected int fantasyBookCounter;
     protected int detectiveBookCounter;
     protected int thrillerBookCounter;
 
-    public Book getBook(String title, String author, double cost, BookType type) {
+    public Book getBook(String title, String author, double cost, BookType type, BookShop bs) {
         Book newBook = null;
         switch (type) {
             case RANOBE:
@@ -31,7 +30,7 @@ public class BookFactory {
             default:
                 throw new IllegalArgumentException("Wrong book type " + type);
         }
-        books.add(newBook);
+        bs.addBook(newBook);
         return newBook;
     }
 

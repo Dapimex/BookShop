@@ -48,4 +48,8 @@ public class BookShop {
         customer.addBook(form.getBook());
     }
 
+    public void addBook(Book newBook) {
+        this.books.add(newBook);
+    }
+
 }

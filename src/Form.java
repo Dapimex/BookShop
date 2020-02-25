@@ -21,4 +21,9 @@ public class Form {
     public int getDays() {
         return days;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s booked '%s'", customer.name, book.getTitle());
+    }
 }

@@ -40,4 +40,9 @@ public abstract class Book {
     public void returnBook() {
         this.available = true;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s | %s", this.title, this.author);
+    }
 }

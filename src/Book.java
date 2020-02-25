@@ -31,6 +31,6 @@ public abstract class Book {
 
     @Override
     public String toString() {
-        return String.format("%s | %s", this.title, this.author);
+        return String.format("%s | %s | %s", this.title, this.author, this.cost);
     }
 }

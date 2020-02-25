@@ -30,4 +30,12 @@ public class Customer {
 
         return books;
     }
+
+    public ArrayList<Book> getAllBooks() {
+        return this.booksBooked;
+    }
+
+    public void bookBook(Form form) {
+        this.booksBooked.add(form.getBook());
+    }
 }

@@ -43,14 +43,19 @@ public class BookShop {
         return currentTypeBooks.size();
     }
 
-    public void bookBooks(Form form) {
+    public void buyBooks(Form form) {
         Customer customer = form.getCustomer();
         customer.addBook(form.getBook());
         forms.add(form);
+        deleteBook(form.getBook());
     }
 
     public void addBook(Book newBook) {
         this.books.add(newBook);
+    }
+
+    public void deleteBook(Book oldBook) {
+        this.books.remove(oldBook);
     }
 
 }

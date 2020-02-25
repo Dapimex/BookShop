@@ -4,7 +4,6 @@ public abstract class Book {
     private String author;
     private double cost;
     private BookType type;
-    private boolean available = true;
 
     public Book(String title, String author, double cost, BookType type) {
         this.title = title;
@@ -29,17 +28,6 @@ public abstract class Book {
         return type;
     }
 
-    public boolean isAvailable() {
-        return available;
-    }
-
-    public void book() {
-        this.available = false;
-    }
-
-    public void returnBook() {
-        this.available = true;
-    }
 
     @Override
     public String toString() {

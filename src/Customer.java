@@ -35,7 +35,7 @@ public class Customer {
         return this.booksBooked;
     }
 
-    public void bookBook(Form form) {
-        this.booksBooked.add(form.getBook());
+    public void addBook(Book book) {
+        this.booksBooked.add(book);
     }
 }

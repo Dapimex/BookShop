@@ -37,7 +37,7 @@ public class Main {
         Form form2 = new Form(ran1, customerSubham, 14);
         bs.bookBooks(form2);
 
-        Form form3 = new Form(ran1, customerLeonid, 2);
+        Form form3 = new Form(det2, customerLeonid, 2);
         bs.bookBooks(form3);
 
         printFormList("CURRENT BOOKINGS IN BOOK SHOP:", bs.getForms());

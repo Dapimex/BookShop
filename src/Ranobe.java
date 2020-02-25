@@ -1,2 +1,2 @@
-public class Ranobe implements Book {
+public class Ranobe extends Book {
 }

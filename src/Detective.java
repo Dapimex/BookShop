@@ -1,2 +1,2 @@
-public class Detective implements Book {
+public class Detective extends Book {
 }

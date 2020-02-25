@@ -1,2 +1,2 @@
-public class Fantasy implements Book {
+public class Fantasy extends Book {
 }

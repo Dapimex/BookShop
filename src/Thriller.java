@@ -1,2 +1,2 @@
-public class Thriller implements Book {
+public class Thriller extends Book {
 }

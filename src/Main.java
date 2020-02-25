@@ -31,6 +31,8 @@ public class Main {
         Customer customerSubham = new Customer("Subham", "888-66-63");
         Customer customerLeonid = new Customer("Leonid", "852-96-41");
 
+        printBookList("Find books:", bs.getBooks("Yahari Ore no Seishun Love Come wa Machigatteiru"));
+
         Form form = new Form(th1, customerLuiz);
         bs.buyBooks(form);     // submit form for booking to the book shop
 
@@ -43,7 +45,6 @@ public class Main {
         printFormList("CURRENT BOOKINGS IN BOOK SHOP:", bs.getForms());
 
         printBookList("LUIZ BOOKED:", customerLuiz.booksBooked);
-
     }
 
     private static void printBookList(String message, List<Book> list) {

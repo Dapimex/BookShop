@@ -34,6 +34,17 @@ public class BookShop {
         return currentTypeBooks;
     }
 
+    public ArrayList<Book> getBooks(String title) {
+        ArrayList<Book> currentTitleBooks = new ArrayList<>();
+
+        for (int i = 0; i < this.books.size(); i++) {
+            if (this.books.get(i).getTitle().equals(title))
+                currentTitleBooks.add(this.books.get(i));
+        }
+
+        return currentTitleBooks;
+    }
+
     public int getBooksAmount() {
         return books.size();
     }

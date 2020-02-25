@@ -5,6 +5,10 @@ public class Form {
     private int days;
 
     public Form(Book book, Customer customer, int days) {
+        if (!book.isAvailable()) {
+            System.out.println("Book is not available");
+            return;
+        }
         this.book = book;
         this.customer = customer;
         this.days = days;

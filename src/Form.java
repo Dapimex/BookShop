@@ -5,10 +5,9 @@ public class Form {
     private int days;
 
     public Form(Book book, Customer customer, int days) {
-        if (!book.isAvailable()) {
-            System.out.println("Book is not available");
-            return;
-        }
+        if (!book.isAvailable())
+            throw new IllegalArgumentException("Book is not available");
+        book.book();
         this.book = book;
         this.customer = customer;
         this.days = days;

@@ -44,6 +44,7 @@ public class BookShop {
     }
 
     public void bookBooks(Form form) {
+        if (form == null) return;   // check if form is valid
         Customer customer = form.getCustomer();
         customer.addBook(form.getBook());
     }

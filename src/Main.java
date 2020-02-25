@@ -25,25 +25,38 @@ public class Main {
         Book th2 = bookFactory.getBook("Gone Girl", "Gillian Flynn", 750, BookType.THRILLER, bs);
 
         List<Book> detectives = bs.getBooks(BookType.DETECTIVE);    // search for specific category
-        System.out.println("DETECTIVES: ");
-        printBookList(detectives);  // find detectives
-        System.out.println();
+        printBookList("DETECTIVES: ", detectives);  // find detectives
 
-        Customer customer = new Customer("Luiz", "343-56-56");
+        Customer customerLuiz = new Customer("Luiz", "343-56-56");
+        Customer customerSubham = new Customer("Subham", "888-66-63");
+        Customer customerLeonid = new Customer("Leonid", "852-96-41");
 
-        Form form = new Form(th1, customer, 7);
+        Form form = new Form(th1, customerLuiz, 7);
         bs.bookBooks(form);     // submit form for booking to the book shop
 
+        Form form2 = new Form(ran1, customerSubham, 14);
+        bs.bookBooks(form2);
+
+        Form form3 = new Form(ran1, customerLeonid, 2);
+        bs.bookBooks(form3);
+
+        printFormList("CURRENT BOOKINGS IN BOOK SHOP:", bs.getForms());
+
+        printBookList("LUIZ BOOKED:", customerLuiz.booksBooked);
 
     }
 
-    private static void printBookList(List<Book> list) {
-        for (Book book : list) {
+    private static void printBookList(String message, List<Book> list) {
+        System.out.println(message);
+        for (Book book : list)
             System.out.println(book.toString());
-        }
+        System.out.println();
     }
 
-    private static void printForm(Form form) {
-        System.out.println(form.toString());
+    private static void printFormList(String message, List<Form> list) {
+        System.out.println(message);
+        for (Form form : list)
+            System.out.println(form.toString());
+        System.out.println();
     }
 }

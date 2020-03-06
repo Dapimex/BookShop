@@ -1,3 +1,8 @@
+package ShopEntities;
+
+import Books.Book;
+import Books.BookType;
+
 import java.util.ArrayList;
 
 public class Customer {

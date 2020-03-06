@@ -1,3 +1,7 @@
+package ShopEntities;
+
+import Books.Book;
+
 public class Form {
 
     private Book book;

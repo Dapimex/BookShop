@@ -1,5 +1,7 @@
-import java.util.ArrayList;
-import java.util.List;
+package Factories;
+
+import Books.*;
+import ShopEntities.*;
 
 public class BookFactory {
 

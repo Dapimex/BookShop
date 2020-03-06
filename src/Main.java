@@ -1,10 +1,17 @@
+import Books.Book;
+import Books.BookType;
+import Factories.BookFactory;
+import ShopEntities.BookShop;
+import ShopEntities.Customer;
+import ShopEntities.Form;
+
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        BookShop bs = new BookShop();
+        BookShop bs = BookShop.getInstance();
         BookFactory bookFactory = new BookFactory();
 
         Book fan1 = bookFactory.getBook("Harry Potter", "J.K.Rowling", 700, BookType.FANTASY, bs);
@@ -44,7 +51,7 @@ public class Main {
 
         printFormList("CURRENT BOOKINGS IN BOOK SHOP:", bs.getForms());
 
-        printBookList("LUIZ BOOKED:", customerLuiz.booksBooked);
+        printBookList("LUIZ BOOKED:", customerLuiz.getAllBooks());
     }
 
     private static void printBookList(String message, List<Book> list) {

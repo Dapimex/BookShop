@@ -1,3 +1,8 @@
+package ShopEntities;
+
+import Books.Book;
+import Books.BookType;
+
 import java.util.ArrayList;
 
 public class BookShop {
@@ -5,11 +10,19 @@ public class BookShop {
     private ArrayList<Book> books;
     private ArrayList<Form> forms;
     private ArrayList<Customer> customers;
+    private static BookShop instance;
 
-    public BookShop() {
+    private BookShop() {
         this.books = new ArrayList<>();
         this.customers = new ArrayList<>();
         this.forms = new ArrayList<>();
+    }
+
+    public static BookShop getInstance() {
+        if (instance == null) {
+            instance = new BookShop();
+        }
+        return instance;
     }
 
     public ArrayList<Book> getBooks() {

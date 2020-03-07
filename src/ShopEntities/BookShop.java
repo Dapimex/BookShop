@@ -7,10 +7,10 @@ import java.util.ArrayList;
 
 public class BookShop {
 
+    private static BookShop instance;
     private ArrayList<Book> books;
     private ArrayList<Form> forms;
     private ArrayList<Customer> customers;
-    private static BookShop instance;
 
     private BookShop() {
         this.books = new ArrayList<>();
@@ -27,13 +27,6 @@ public class BookShop {
 
     public ArrayList<Book> getBooks() {
         return this.books;
-    }
-    public ArrayList<Form> getForms() {
-        return this.forms;
-    }
-
-    public ArrayList<Customer> getCustomers() {
-        return this.customers;
     }
 
     public ArrayList<Book> getBooks(BookType type) {
@@ -67,11 +60,12 @@ public class BookShop {
         return currentTypeBooks.size();
     }
 
-    public void buyBooks(Form form) {
-        Customer customer = form.getCustomer();
-        customer.addBook(form.getBook());
-        forms.add(form);
-        deleteBook(form.getBook());
+    public ArrayList<Form> getForms() {
+        return this.forms;
+    }
+
+    public ArrayList<Customer> getCustomers() {
+        return this.customers;
     }
 
     public void addBook(Book newBook) {
@@ -82,4 +76,10 @@ public class BookShop {
         this.books.remove(oldBook);
     }
 
+    public void buyBook(Form form) {
+        Customer customer = form.getCustomer();
+        customer.addBook(form.getBook());
+        forms.add(form);
+        deleteBook(form.getBook());
+    }
 }

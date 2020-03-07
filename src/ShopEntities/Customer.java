@@ -6,9 +6,9 @@ import Books.BookType;
 import java.util.ArrayList;
 
 public class Customer {
-    String name;
-    String phone;
-    ArrayList<Book> booksBooked;
+    public String name;
+    public String phone;
+    private ArrayList<Book> booksBooked;
 
     public Customer(String name, String phone) {
         this.name = name;

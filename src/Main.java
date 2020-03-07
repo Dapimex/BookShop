@@ -1,6 +1,5 @@
 import Books.Book;
 import Books.BookType;
-import Factories.BookFactory;
 import ShopEntities.BookShop;
 import ShopEntities.Customer;
 import ShopEntities.Form;
@@ -12,24 +11,23 @@ public class Main {
     public static void main(String[] args) {
 
         BookShop bs = BookShop.getInstance();
-        BookFactory bookFactory = new BookFactory();
 
-        Book fan1 = bookFactory.getBook("Harry Potter", "J.K.Rowling", 700, BookType.FANTASY, bs);
-        Book fan2 = bookFactory.getBook("The Return of the King", "J.R.R. Tolkien", 900,
+        Book fan1 = new Book("Harry Potter", "J.K.Rowling", 700, BookType.FANTASY, bs);
+        Book fan2 = new Book("The Return of the King", "J.R.R. Tolkien", 900,
                 BookType.FANTASY, bs);
 
-        Book det1 = bookFactory.getBook("A Case of Identity", "A.C. Doyle", 300,
+        Book det1 = new Book("A Case of Identity", "A.C. Doyle", 300,
                 BookType.DETECTIVE, bs);
-        Book det2 = bookFactory.getBook("The Adventure of the Blue Carbuncle", "A.C. Doyle", 350,
+        Book det2 = new Book("The Adventure of the Blue Carbuncle", "A.C. Doyle", 350,
                 BookType.DETECTIVE, bs);
 
-        Book ran1 = bookFactory.getBook("Yahari Ore no Seishun Love Come wa Machigatteiru", "Wataru Watari",
+        Book ran1 = new Book("Yahari Ore no Seishun Love Come wa Machigatteiru", "Wataru Watari",
                 340, BookType.RANOBE, bs);
-        Book ran2 = bookFactory.getBook("Utsuro no Hako to Zero no Maria", "Eiji Mikage", 300,
+        Book ran2 = new Book("Utsuro no Hako to Zero no Maria", "Eiji Mikage", 300,
                 BookType.RANOBE, bs);
 
-        Book th1 = bookFactory.getBook("It", "Stephen King", 800, BookType.THRILLER, bs);
-        Book th2 = bookFactory.getBook("Gone Girl", "Gillian Flynn", 750, BookType.THRILLER, bs);
+        Book th1 = new Book("It", "Stephen King", 800, BookType.THRILLER, bs);
+        Book th2 = new Book("Gone Girl", "Gillian Flynn", 750, BookType.THRILLER, bs);
 
         List<Book> detectives = bs.getBooks(BookType.DETECTIVE);    // search for specific category
         printBookList("DETECTIVES: ", detectives);  // find detectives
@@ -41,13 +39,13 @@ public class Main {
         printBookList("Find books:", bs.getBooks("Yahari Ore no Seishun Love Come wa Machigatteiru"));
 
         Form form = new Form(th1, customerLuiz);
-        bs.buyBooks(form);     // submit form for booking to the book shop
+        bs.buyBook(form);     // submit form for booking to the book shop
 
         Form form2 = new Form(ran1, customerSubham);
-        bs.buyBooks(form2);
+        bs.buyBook(form2);
 
         Form form3 = new Form(det2, customerLeonid);
-        bs.buyBooks(form3);
+        bs.buyBook(form3);
 
         printFormList("CURRENT BOOKINGS IN BOOK SHOP:", bs.getForms());
 

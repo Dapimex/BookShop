@@ -30,13 +30,13 @@ public class Main {
         Book th2 = new Book("Gone Girl", "Gillian Flynn", 750, BookType.THRILLER, bs);
 
         List<Book> detectives = bs.getBooks(BookType.DETECTIVE);    // search for specific category
-        printBookList("DETECTIVES: ", detectives);  // find detectives
+        printBookList("Detectives: ", detectives);  // find detectives
 
         Customer customerLuiz = new Customer("Luiz", "343-56-56");
         Customer customerSubham = new Customer("Subham", "888-66-63");
         Customer customerLeonid = new Customer("Leonid", "852-96-41");
 
-        printBookList("Find books:", bs.getBooks("Yahari Ore no Seishun Love Come wa Machigatteiru"));
+        printBookList("Found books:", bs.getBooks("Yahari Ore no Seishun Love Come wa Machigatteiru"));
 
         Form form = new Form(th1, customerLuiz);
         bs.buyBook(form);     // submit form for booking to the book shop
@@ -47,9 +47,9 @@ public class Main {
         Form form3 = new Form(det2, customerLeonid);
         bs.buyBook(form3);
 
-        printFormList("CURRENT BOOKINGS IN BOOK SHOP:", bs.getForms());
+        printFormList("Current bookings in book shop:", bs.getForms());
 
-        printBookList("LUIZ BOOKED:", customerLuiz.getAllBooks());
+        printBookList("Booked by Luiz:", customerLuiz.getAllBooks());
     }
 
     private static void printBookList(String message, List<Book> list) {

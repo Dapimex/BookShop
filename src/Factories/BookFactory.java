@@ -11,7 +11,7 @@ public class BookFactory {
     protected int thrillerBookCounter;
 
     public Book getBook(String title, String author, double cost, BookType type, BookShop bs) {
-        Book newBook = null;
+        Book newBook;
         switch (type) {
             case RANOBE:
                 ranobeBookCounter++;

@@ -39,9 +39,9 @@ public class BookShop {
     public ArrayList<Book> getBooks(BookType type) {
         ArrayList<Book> currentTypeBooks = new ArrayList<>();
 
-        for (int i = 0; i < this.books.size(); i++) {
-            if (this.books.get(i).getType() == type)
-                currentTypeBooks.add(this.books.get(i));
+        for (Book book : this.books) {
+            if (book.getType() == type)
+                currentTypeBooks.add(book);
         }
 
         return currentTypeBooks;
@@ -50,9 +50,9 @@ public class BookShop {
     public ArrayList<Book> getBooks(String title) {
         ArrayList<Book> currentTitleBooks = new ArrayList<>();
 
-        for (int i = 0; i < this.books.size(); i++) {
-            if (this.books.get(i).getTitle().equals(title))
-                currentTitleBooks.add(this.books.get(i));
+        for (Book book : this.books) {
+            if (book.getTitle().equals(title))
+                currentTitleBooks.add(book);
         }
 
         return currentTitleBooks;

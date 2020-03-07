@@ -17,9 +17,9 @@ public class Customer {
     }
 
     public Book getBook(String title) {
-        for (int i = 0; i < booksBooked.size(); i++) {
-            if (booksBooked.get(i).getTitle().equals(title))
-                return booksBooked.get(i);
+        for (Book book : booksBooked) {
+            if (book.getTitle().equals(title))
+                return book;
         }
 
         throw new IllegalArgumentException("Wrong book title " + title);
@@ -28,9 +28,9 @@ public class Customer {
     public ArrayList<Book> getBooks(BookType type) {
         ArrayList<Book> books = new ArrayList<>();
 
-        for (int i = 0; i < booksBooked.size(); i++) {
-            if (booksBooked.get(i).getType() == type)
-                books.add(booksBooked.get(i));
+        for (Book book : booksBooked) {
+            if (book.getType() == type)
+                books.add(book);
         }
 
         return books;

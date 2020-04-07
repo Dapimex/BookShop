@@ -1,3 +1,4 @@
+import BookFormats.*;
 import Books.Book;
 import Books.BookType;
 import ShopEntities.BookShop;
@@ -11,23 +12,26 @@ public class Main {
     public static void main(String[] args) {
 
         BookShop bs = BookShop.getInstance();
+        EBook eBook = new EBook();
+        Paper paper = new Paper();
+        PDF pdf = new PDF();
 
-        Book fan1 = new Book("Harry Potter", "J.K.Rowling", 700, BookType.FANTASY, bs);
+        Book fan1 = new Book("Harry Potter", "J.K.Rowling", 700, BookType.FANTASY, bs, eBook);
         Book fan2 = new Book("The Return of the King", "J.R.R. Tolkien", 900,
-                BookType.FANTASY, bs);
+                BookType.FANTASY, bs, eBook);
 
         Book det1 = new Book("A Case of Identity", "A.C. Doyle", 300,
-                BookType.DETECTIVE, bs);
+                BookType.DETECTIVE, bs, eBook);
         Book det2 = new Book("The Adventure of the Blue Carbuncle", "A.C. Doyle", 350,
-                BookType.DETECTIVE, bs);
+                BookType.DETECTIVE, bs, eBook);
 
         Book ran1 = new Book("Yahari Ore no Seishun Love Come wa Machigatteiru", "Wataru Watari",
-                340, BookType.RANOBE, bs);
+                340, BookType.RANOBE, bs, pdf);
         Book ran2 = new Book("Utsuro no Hako to Zero no Maria", "Eiji Mikage", 300,
-                BookType.RANOBE, bs);
+                BookType.RANOBE, bs, pdf);
 
-        Book th1 = new Book("It", "Stephen King", 800, BookType.THRILLER, bs);
-        Book th2 = new Book("Gone Girl", "Gillian Flynn", 750, BookType.THRILLER, bs);
+        Book th1 = new Book("It", "Stephen King", 800, BookType.THRILLER, bs, eBook);
+        Book th2 = new Book("Gone Girl", "Gillian Flynn", 750, BookType.THRILLER, bs, paper);
 
         List<Book> detectives = bs.getBooks(BookType.DETECTIVE);    // search for specific category
         printBookList("Detectives: ", detectives);  // find detectives

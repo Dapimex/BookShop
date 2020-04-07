@@ -1,5 +1,6 @@
 package Books;
 
+import BookFormats.BookFormat;
 import ShopEntities.BookShop;
 
 public class Book {
@@ -8,12 +9,14 @@ public class Book {
     private String author;
     private double cost;
     private BookType type;
+    private BookFormat format;
 
-    public Book(String title, String author, double cost, BookType type, BookShop bs) {
+    public Book(String title, String author, double cost, BookType type, BookShop bs, BookFormat format) {
         this.title = title;
         this.author = author;
         this.cost = cost;
         this.type = type;
+        this.format = format;
         bs.addBook(this);
     }
 
@@ -31,6 +34,10 @@ public class Book {
 
     public BookType getType() {
         return type;
+    }
+
+    public BookFormat getFormat() {
+        return format;
     }
 
     @Override

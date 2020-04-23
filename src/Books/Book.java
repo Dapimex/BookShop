@@ -1,6 +1,6 @@
 package Books;
 
-import BookFormats.BookFormat;
+import BookFormatStrategies.BookFormatStrategy;
 import ShopEntities.BookShop;
 
 public class Book {
@@ -9,14 +9,14 @@ public class Book {
     private String author;
     private double cost;
     private BookType type;
-    private BookFormat format;
+    private BookFormatStrategy strategy;
 
-    public Book(String title, String author, double cost, BookType type, BookShop bs, BookFormat format) {
+    public Book(String title, String author, double cost, BookType type, BookShop bs, BookFormatStrategy strategy) {
         this.title = title;
         this.author = author;
         this.cost = cost;
         this.type = type;
-        this.format = format;
+        this.strategy = strategy;
         bs.addBook(this);
     }
 
@@ -36,8 +36,20 @@ public class Book {
         return type;
     }
 
-    public BookFormat getFormat() {
-        return format;
+    public BookFormatStrategy getStrategy() {
+        return strategy;
+    }
+
+    public void setStrategy(BookFormatStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    public void nextPage() {
+        strategy.nextPage();
+    }
+
+    public void close() {
+        strategy.closeBook();
     }
 
     @Override

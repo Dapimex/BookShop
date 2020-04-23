@@ -1,4 +1,4 @@
-import BookFormats.*;
+import BookFormatStrategies.*;
 import Books.Book;
 import Books.BookType;
 import ShopEntities.BookShop;

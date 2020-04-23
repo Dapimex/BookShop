@@ -1,6 +1,6 @@
-package BookFormats;
+package BookFormatStrategies;
 
-public class Paper implements BookFormat {
+public class Paper implements BookFormatStrategy {
 
     public void nextPage() {
         System.out.println("Turn over the page");

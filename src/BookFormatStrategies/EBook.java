@@ -1,6 +1,6 @@
-package BookFormats;
+package BookFormatStrategies;
 
-public class EBook implements BookFormat {
+public class EBook implements BookFormatStrategy {
 
     public void nextPage() {
         System.out.println("Tap button to open next page");

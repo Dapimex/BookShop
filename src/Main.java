@@ -12,9 +12,9 @@ public class Main {
     public static void main(String[] args) {
 
         BookShop bs = BookShop.getInstance();
-        EBook eBook = new EBook();
-        Paper paper = new Paper();
-        PDF pdf = new PDF();
+        BookFormatStrategy eBook = new EBook();
+        BookFormatStrategy paper = new Paper();
+        BookFormatStrategy pdf = new PDF();
 
         Book fan1 = new Book("Harry Potter", "J.K.Rowling", 700, BookType.FANTASY, bs, eBook);
         Book fan2 = new Book("The Return of the King", "J.R.R. Tolkien", 900,
@@ -32,6 +32,10 @@ public class Main {
 
         Book th1 = new Book("It", "Stephen King", 800, BookType.THRILLER, bs, eBook);
         Book th2 = new Book("Gone Girl", "Gillian Flynn", 750, BookType.THRILLER, bs, paper);
+
+        fan1.nextPage();
+        det2.close();
+        System.out.println();
 
         List<Book> detectives = bs.getBooks(BookType.DETECTIVE);    // search for specific category
         printBookList("Detectives: ", detectives);  // find detectives
